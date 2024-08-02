@@ -1,0 +1,327 @@
+<html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ökunám - Um mig</title>
+<style>
+  :root {
+    --primary-color: #1a5f7a;
+    --secondary-color: #2c8cb0;
+    --accent-color: #ff6b6b;
+    --text-color: #333;
+    --background-color: #f0f0f0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+
+  nav {
+    background-color: var(--secondary-color);
+    padding: 0.5em;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 0.5em;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .about-section {
+    margin-bottom: 2em;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 1em auto;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    margin-top: 2em;
+  }
+
+  .team-member {
+    text-align: center;
+  }
+
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  .timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+
+  .timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: var(--background-color);
+    border: 4px solid var(--accent-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    left: 50%;
+  }
+
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--secondary-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--secondary-color);
+  }
+
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--secondary-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--secondary-color) transparent transparent;
+  }
+
+  .right::after {
+    left: -16px;
+  }
+
+  .timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .timeline::after {
+      left: 31px;
+    }
+    
+    .timeline-container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+    
+    .timeline-container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    .left::after, .right::after {
+      left: 15px;
+    }
+    
+    .right {
+      left: 0%;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>ÖKUNÁM</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="heim.html">Heim</a></li>
+      <li><a href="namskeid.html">Námskeið</a></li>
+      <li><a href="verd.html">Verð</a></li>
+      <li><a href="hafasamband.html">Hafa samband</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Um okkur</h2>
+    <section class="about-section">
+      <p>Ökunám var stofnað með það að markmiði að veita framúrskarandi ökukennslu og auka öryggi í umferðinni.</p>
+      <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ökukennslubifreið á vegum úti" class="about-image">
+      <p>Ökunám leggur áherslu á persónulega nálgun í kennslu og notar nýjustu tækni og aðferðir til að tryggja að nemendur fái bestu mögulegu þjálfun. Markmiðið er ekki aðeins að hjálpa fólki að standast ökupróf, heldur að búa til ábyrga og örugga ökumenn sem munu stuðla að betri umferðarmenningu á Íslandi.</p>
+    </section>
+
+    <section class="about-section">
+      <h3>Okkar teymi</h3>
+      <p>Hjá Ökunám starfa reyndir og metnaðarfullir ökukennarar. Hver kennari býr yfir mikilli reynslu í umferðinni og hefur sérhæft sig í mismunandi þáttum ökukennslu.</p>
+      <div class="team-members">
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Jón Jónsson, yfirkennari">
+          <h4>Guðbjartur Bergman</h4>
+          <p>Ökukennari</p>
+        </div>
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Guðrún Guðrúnardóttir, ökukennari">
+          <h4>Þórarinn Jóhann</h4>
+          <p>Ökukennari</p>
+        </div>
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Sigurður Sigurðsson, ökukennari">
+          <h4>Ólafur Pálsson</h4>
+          <p>Ökukennari</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h3>Saga okkar</h3>
+      <div class="timeline">
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <h4>2023</h4>
+            <p>Ökunám stofnað af Guðbjarti Bergman.</p>
+          </div>
+        </div>
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <h4>2024</h4>
+            <p>Ökunám tekur til starfa.</p>
+          </div>
+        </div>
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <h4>2030</h4>
+            <p>Ökunám tekur í notkun fyrsta ökuherminn á Íslandi.</p>
+          </div>
+        </div>
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <h4>2033</h4>
+            <p>Ökunám fagnar 10 ára afmæli og opnar nýja deild fyrir endurmenntun ökumanna.</p>
+          </div>
+        </div>
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <h4>2043</h4>
+            <p>Ökunám heldur áfram að vaxa og dafna, með áherslu á nýjustu tækni og aðferðir í ökukennslu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add animation to timeline
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function callbackFunc() {
+      const items = document.querySelectorAll(".timeline-container");
+      for (let i = 0; i < items.length; i++) {
+        if (isElementInViewport(items[i])) {
+          items[i].classList.add("in-view");
+        }
+      }
+    }
+
+    window.addEventListener("load", callbackFunc);
+    window.addEventListener("scroll", callbackFunc);
+  </script>
+</body>
+</html>

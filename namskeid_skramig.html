@@ -1,0 +1,231 @@
+<html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ökunám - Skráning á námskeið</title>
+<style>
+  :root {
+    --primary-color: #1a5f7a;
+    --secondary-color: #2c8cb0;
+    --accent-color: #ff6b6b;
+    --text-color: #333;
+    --background-color: #f0f0f0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+
+  nav {
+    background-color: var(--secondary-color);
+    padding: 0.5em;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 0.5em;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5em;
+  }
+
+  form {
+    display: grid;
+    gap: 1em;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+
+  button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #ff4757;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+
+  @media screen and (max-width: 600px) {
+    main {
+      padding: 1em;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>ÖKUNÁM</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="heim.html">Heim</a></li>
+      <li><a href="umokkur.html">Um okkur</a></li>
+      <li><a href="namskeid.html">Námskeið</a></li>
+      <li><a href="verd.html">Verð</a></li>
+      <li><a href="hafasamband.html">Hafa samband</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Skráning á námskeið</h2>
+    <form id="registrationForm">
+      <div>
+        <label for="fullName">Fullt nafn:</label>
+        <input type="text" id="fullName" name="fullName" required>
+      </div>
+      <div>
+        <label for="email">Netfang:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="phone">Símanúmer:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div>
+        <label for="birthdate">Fæðingardagur:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+      </div>
+      <div>
+        <label for="course">Veldu námskeið:</label>
+        <select id="course" name="course" required>
+          <option value="">--Veldu námskeið--</option>
+          <option value="grunnnamskeið">Grunnnámskeið</option>
+          <option value="öryggisakstur">Öryggisakstur</option>
+          <option value="vetrarakstur">Vetrarakstur</option>
+          
+          
+        </select>
+      </div>
+      <div>
+        <label for="comments">Athugasemdir:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+      </div>
+      <div>
+        <button type="submit">Senda skráningu</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Basic form validation
+      let isValid = true;
+      const requiredFields = form.querySelectorAll('[required]');
+      requiredFields.forEach(field => {
+        if (!field.value) {
+          isValid = false;
+          field.style.borderColor = 'red';
+          let errorMsg = field.parentNode.querySelector('.error');
+          if (!errorMsg) {
+            errorMsg = document.createElement('span');
+            errorMsg.className = 'error';
+            field.parentNode.appendChild(errorMsg);
+          }
+          errorMsg.textContent = 'Þennan reit þarf að fylla út';
+        } else {
+          field.style.borderColor = '';
+          const errorMsg = field.parentNode.querySelector('.error');
+          if (errorMsg) {
+            errorMsg.remove();
+          }
+        }
+      });
+
+      if (isValid) {
+        // If the form is valid, you would typically send this data to a server
+        // For this example, we'll just log it to the console and show an alert
+        console.log('Form submitted:', {
+          fullName: form.fullName.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          birthdate: form.birthdate.value,
+          course: form.course.value,
+          comments: form.comments.value
+        });
+        alert('Takk fyrir skráninguna! Ég mun hafa samband fljótlega.');
+        form.reset();
+      }
+    });
+
+    // Add some animation to the form
+    form.querySelectorAll('input, select, textarea').forEach(element => {
+      element.addEventListener('focus', function() {
+        this.style.transform = 'scale(1.02)';
+        this.style.transition = 'transform 0.3s';
+      });
+      element.addEventListener('blur', function() {
+        this.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>

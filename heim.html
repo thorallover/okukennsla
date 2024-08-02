@@ -1,0 +1,238 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ökunám - Heim</title>
+<style>
+  :root {
+    --primary-color: #1a5f7a;
+    --secondary-color: #2c8cb0;
+    --accent-color: #ff6b6b;
+    --text-color: #333;
+    --background-color: #f0f0f0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+
+  nav {
+    background-color: var(--secondary-color);
+    padding: 0.5em;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 0.5em;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 1em;
+  }
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4em 1em;
+    margin-bottom: 2em;
+  }
+
+  .hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #ff4757;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin-bottom: 2em;
+  }
+
+  .feature {
+    background-color: white;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .feature i {
+    font-size: 2em;
+    color: var(--secondary-color);
+    margin-bottom: 0.5em;
+  }
+
+  .testimonials {
+    background-color: white;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .testimonial {
+    margin-bottom: 1em;
+  }
+
+  footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+  }
+
+  @media screen and (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero h2 {
+      font-size: 2em;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>ÖKUNÁM</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="umokkur.html">Um mig</a></li>
+      <li><a href="namskeid.html">Námskeið</a></li>
+      <li><a href="verd.html">Verð</a></li>
+      <li><a href="hafasamband.html">Hafa samband</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="hero">
+      <h2>Lærðu að aka af öryggi</h2>
+      <p>Hjá Ökunám færðu fyrsta flokks kennslu frá reyndum kennara</p>
+      <a href="namskeid.html" class="cta-button">Skoða námskeið</a>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <i class="fas fa-car"></i>
+        <h3>Fjölbreytt námskeið</h3>
+        <p>Guðbjartur býður upp á námskeið fyrir byrjendur og fyrir endurmenntun.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Reyndur kennari</h3>
+        <p>Guðbjartur hefur áratuga ökureynslu og er með framúrskarandi kennsluaðferðir.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Áhersla á öryggi</h3>
+        <p>Guðbjartur leggur mikla áherslu á öryggi og ábyrga hegðun í umferðinni.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-calendar-alt"></i>
+        <h3>Sveigjanleg tímasetning</h3>
+        <p>Guðbjartur býður upp á sveigjanlegar tímasetningar til að koma til móts við þínar þarfir.</p>
+      </div>
+    </section>
+
+    <!--<section class="testimonials">
+      <h2>Það sem nemendur okkar segja</h2>
+      <div class="testimonial">
+        <p>"Frábær skóli með góðum kennurum. Ég lærði svo mikið og er nú öruggur ökumaður."</p>
+        <p><strong>- Jón Jónsson</strong></p>
+      </div>
+      <div class="testimonial">
+        <p>"Ég mæli eindregið með Öruggir Vegir Ökuskóla. Kennararnir eru þolinmóðir og skýrir í útskýringum."</p>
+        <p><strong>- Guðrún Guðrúnardóttir</strong></p>
+      </div>
+    </section>-->
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Ökunám. Öll réttindi áskilin.</p>
+  </footer>
+
+  <script>
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add a simple animation to the features section
+    const features = document.querySelectorAll('.feature');
+    window.addEventListener('scroll', () => {
+      features.forEach(feature => {
+        const featurePosition = feature.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if(featurePosition < screenPosition) {
+          feature.style.opacity = '1';
+          feature.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

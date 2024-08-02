@@ -1,0 +1,198 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ökunám - Hafa samband</title>
+<style>
+  :root {
+    --primary-color: #1a5f7a;
+    --secondary-color: #2c8cb0;
+    --accent-color: #ff6b6b;
+    --text-color: #333;
+    --background-color: #f0f0f0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+
+  nav {
+    background-color: var(--secondary-color);
+    padding: 0.5em;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 0.5em;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .contact-form, .contact-info {
+    margin-bottom: 2em;
+  }
+
+  .contact-form form {
+    display: grid;
+    gap: 1em;
+  }
+
+  .contact-form label {
+    font-weight: bold;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .contact-form textarea {
+    min-height: 150px;
+  }
+
+  .contact-form button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .contact-form button:hover {
+    background-color: #ff4757;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 2em;
+  }
+
+  @media screen and (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>ÖKUNÁM</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="heim.html">Heim</a></li>
+      <li><a href="umokkur.html">Um ökunám</a></li>
+      <li><a href="namskeid.html">Námskeið</a></li>
+      <li><a href="verd.html">Verð</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Hafa samband</h2>
+    <p>Guðbjartur hjá Ökunám er ávallt reiðubúinn að svara fyrirspurnum þínum og veita þér þær upplýsingar sem þú þarft. Ekki hika við að hafa samband!</p>
+
+    <div class="contact-form">
+      <h3>Sendu mér skilaboð</h3>
+      <form id="contact-form">
+        <label for="name">Nafn:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Netfang:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Símanúmer:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="subject">Efni:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Skilaboð:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Senda skilaboð</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h3>Upplýsingar</h3>
+      <p><strong>Ökukennari:</strong> Guðbjartur Bergman</p>
+      <p><strong>Heimilisfang:</strong> Orrahólar 7 111 Reykjavík</p>
+      <p><strong>Sími:</strong> 777-2222</p>
+      <p><strong>Netfang:</strong> bjartur@dr.com</p>
+      
+    </div>
+
+    <div class="map-container">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-21.93334,64.13432,-21.91334,64.14432&amp;layer=mapnik" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Here you would normally send the form data to a server
+      // For this example, we'll just log it to the console
+      console.log('Form submitted');
+      console.log('Name:', document.getElementById('name').value);
+      console.log('Email:', document.getElementById('email').value);
+      console.log('Phone:', document.getElementById('phone').value);
+      console.log('Subject:', document.getElementById('subject').value);
+      console.log('Message:', document.getElementById('message').value);
+
+      // Clear the form
+      this.reset();
+
+      // Show a thank you message
+      alert('Takk fyrir að hafa samband! Ég mun svara þér eins fljótt og auðið er.');
+    });
+  </script>
+</body>
+</html>

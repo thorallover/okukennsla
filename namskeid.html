@@ -1,0 +1,267 @@
+<html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ökunám - Námskeið</title>
+<style>
+  :root {
+    --primary-color: #1a5f7a;
+    --secondary-color: #2c8cb0;
+    --accent-color: #ff6b6b;
+    --text-color: #333;
+    --background-color: #f0f0f0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+
+  nav {
+    background-color: var(--secondary-color);
+    padding: 0.5em;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 0.5em;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 1em;
+  }
+
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+  }
+
+  .course-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .course-content {
+    padding: 1.5em;
+  }
+
+  .course-title {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: var(--primary-color);
+  }
+
+  .course-description {
+    margin-bottom: 1em;
+  }
+
+  .course-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #666;
+  }
+
+  .enroll-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .enroll-button:hover {
+    background-color: #ff4757;
+  }
+
+  @media screen and (max-width: 768px) {
+    .course-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>ÖKUNÁM</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="heim.html">Heim</a></li>
+      <li><a href="umokkur.html">Um okkur</a></li>
+      <li><a href="verd.html">Verð</a></li>
+      <li><a href="hafasamband.html">Hafa samband</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Námskeið</h2>
+    <p>Hjá Ökunám er boðið upp á fjölbreytt úrval námskeiða til að mæta þörfum ökunemans, hvort sem þú ert að byrja eða vilt bæta við þekkingu þína.</p>
+    
+    <div class="course-grid">
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bíll á vegi í fallegu landslagi" class="course-image">
+        <div class="course-content">
+          <h3 class="course-title">Grunnnámskeið</h3>
+          <p class="course-description">Alhliða námskeið fyrir byrjendur sem vilja öðlast ökuréttindi.</p>
+          <div class="course-details">
+            <span>Lengd: 15 klukkustundir</span>
+            <a href="namskeid_skramig.html" class="enroll-button">Skrá mig</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1600320254374-ce2d293c324e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Stýri í bíl með hendur á stýri" class="course-image">
+        <div class="course-content">
+          <h3 class="course-title">Öryggisakstur</h3>
+          <p class="course-description">Námskeið fyrir reynda ökumenn sem vilja bæta við sig þekkingu í öryggisökutækni og viðbrögðum við hættum.</p>
+          <div class="course-details">
+            <span>Lengd: 2 dagar</span>
+            <a href="#" class="enroll-button">Skrá mig</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1581415073804-60ae0d24822c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Vörubíll á vegi" class="course-image">
+        <div class="course-content">
+          <h3 class="course-title">Meirapróf</h3>
+          <p class="course-description">Námskeið fyrir þá sem vilja öðlast réttindi til að aka stærri ökutækjum eins og vörubifreiðum og hópferðabifreiðum.</p>
+          <div class="course-details">
+            <span>Lengd: 8 vikur</span>
+            <a href="#" class="enroll-button">Skrá mig</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1574770118700-4ed7dae3310e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bíll á snjóþöktum vegi" class="course-image">
+        <div class="course-content">
+          <h3 class="course-title">Vetrarakstur</h3>
+          <p class="course-description">Sérhæft námskeið í akstri við erfiðar vetraraðstæður. Kennd eru viðbrögð við hálku, snjó og slæmu skyggni.</p>
+          <div class="course-details">
+            <span>Lengd: 1 dagur</span>
+            <a href="#" class="enroll-button">Skrá mig</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1592920752315-12e385a13703?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ökuhermir" class="course-image">
+        <div class="course-content">
+          <h3 class="course-title">Ökuhermisnámskeið</h3>
+          <p class="course-description">Nýstárlegt námskeið þar sem notast er við nýjustu tækni í ökuhermum til að æfa akstur í ýmsum aðstæðum.</p>
+          <div class="course-details">
+            <span>Lengd: 3 dagar</span>
+            <a href="#" class="enroll-button">Skrá mig</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rafmagnsbíll við hleðslustöð" class="course-image">
+        <div class="course-content">
+          <h3 class="course-title">Rafbílanámskeið</h3>
+          <p class="course-description">Sérstakt námskeið fyrir þá sem vilja læra á rafbíla. Farið er yfir sérstöðu rafbíla, hleðslu og hagkvæman akstur.</p>
+          <div class="course-details">
+            <span>Lengd: 2 dagar</span>
+            <a href="#" class="enroll-button">Skrá mig</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <script>
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add animation to course cards
+    const courseCards = document.querySelectorAll('.course-card');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    courseCards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
